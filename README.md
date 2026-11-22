@@ -33,21 +33,5 @@ Cada módulo empieza con una explicación en español y ejemplos. Los alumnos pu
 
 Si hay que añadir una alternativa, se escribe en el campo `pat` de la frase: `(a|b)` = vale a o b, `[x]` = opcional, `@grupo` = grupo de sinónimos, `{T:clave}` = expresión de tiempo que puede ir al principio o al final.
 
-## Tests
 
-```
-node tests/level3.test.js    # corrector del nivel 3: 90 frases, respuestas buenas y malas
-node tests/content.test.js   # 10 ejercicios por nivel y reparto 50/30/20
-```
 
-## ⚠️ Firebase: hay que hacer una cosa una sola vez
-
-Esta app guarda los resultados en su propio nodo, **`modal_verbs_v1`** (el de relative-clauses es `relative_clauses_v1`), para que las notas de las apps no se mezclen.
-
-En la consola de Firebase (proyecto *goya-english*): Realtime Database → **Reglas**. Duplica el bloque de `relative_clauses_v1`, cambia el nombre a `modal_verbs_v1` y publica.
-
-Hasta que no lo hagas, el modo invitado funciona, pero la entrada con código de clase mostrará "Wrong class code".
-
-## Publicarla
-
-Settings → Pages → Deploy from a branch → `main` / root.
